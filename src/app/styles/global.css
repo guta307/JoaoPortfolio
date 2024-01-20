@@ -1,0 +1,70 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: bessemer-bold;
+  src: url(bessemer-bold.ttf);
+}
+@font-face {
+  font-family: botanika-mono;
+  src: url(BotanikaMonoRegular.ttf);
+}
+@font-face {
+  font-family: rubik-italic;
+  src: url(Rubik-Italic.ttf);
+}
+@font-face {
+  font-family: rubik-mediumitalic;
+  src: url(Rubik-MediumItalic.ttf);
+}
+@font-face {
+  font-family: planetkosmos;
+  src: url(planetkosmos.TTF);
+}
+@font-face {
+  font-family: coolvetica;
+  src: url(coolvetica\ rg.ttf);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.content {
+  font-family: "botanika-mono", sans-serif;
+}
+
+.title,
+.header {
+  font-family: "coolvetica", sans-serif;
+}
+
+@layer base {
+  :root {
+    /* Screens */
+
+    --screen-mobile: 640px;
+    --screen-tablet: 1024px;
+    --screen-desktop: 1440px;
+    --screen-tv: 1920px;
+
+    /* Font Size */
+    --text-xs: 12px;
+    --text-sm: 14px;
+    --text-md: 16px;
+    --text-lg: 18px;
+    --text-xl: 20px;
+    --text-xxl: 24px;
+
+    /* Title Font Size */
+    --title-md: 40px;
+    --title-lg: 48px;
+    --title-xl: 56px;
+
+    /*text-color*/
+    --primary: 221, 240, 147;
+  }
+}
