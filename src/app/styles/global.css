@@ -4,27 +4,27 @@
 
 @font-face {
   font-family: bessemer-bold;
-  src: url(bessemer-bold.ttf);
+  src: url("../fonts/bessemer-bold.ttf");
 }
 @font-face {
   font-family: botanika-mono;
-  src: url(BotanikaMonoRegular.ttf);
+  src: url("../fonts/BotanikaMonoRegular.ttf");
 }
 @font-face {
   font-family: rubik-italic;
-  src: url(Rubik-Italic.ttf);
+  src: url("../fonts/Rubik-Italic.ttf");
 }
 @font-face {
   font-family: rubik-mediumitalic;
-  src: url(Rubik-MediumItalic.ttf);
+  src: url("../fonts/Rubik-MediumItalic.ttf");
 }
 @font-face {
   font-family: planetkosmos;
-  src: url(planetkosmos.TTF);
+  src: url("../fonts/planetkosmos.TTF");
 }
 @font-face {
   font-family: coolvetica;
-  src: url(coolvetica\ rg.ttf);
+  src: url("../fonts/coolvetica\ rg.ttf");
 }
 
 * {
@@ -34,7 +34,7 @@
 }
 
 .content {
-  font-family: "botanika-mono", sans-serif;
+  font-family: "bessemer-bold", sans-serif;
 }
 
 .title,
@@ -42,14 +42,18 @@
   font-family: "coolvetica", sans-serif;
 }
 
+html,
+body {
+  min-height: 480px; /* Tamanho mínimo de altura */
+}
+
 @layer base {
   :root {
     /* Screens */
-
-    --screen-mobile: 640px;
-    --screen-tablet: 1024px;
-    --screen-desktop: 1440px;
-    --screen-tv: 1920px;
+    --screen-mobile: 320px; /* Exemplo de valor */
+    --screen-tablet: 768px;
+    --screen-desktop: 1024px;
+    --screen-tv: 1440px;
 
     /* Font Size */
     --text-xs: 12px;
