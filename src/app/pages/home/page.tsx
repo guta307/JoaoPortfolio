@@ -13,6 +13,7 @@ import P9 from "../../assets/home/project9.jpg";
 import P10 from "../../assets/home/project10.jpg";
 import P11 from "../../assets/home/project11.png";
 import HeaderComponent from "@/app/components/header/header";
+import Footer from "@/app/components/footer/footer";
 
 const ids = [
   "65ad99b81f5677401f22a35e",
@@ -125,6 +126,8 @@ const home = () => {
           link={`/pages/project/?id=${ids[10]}`}
         />
       </div>
+
+      <Footer />
     </div>
   );
 };
