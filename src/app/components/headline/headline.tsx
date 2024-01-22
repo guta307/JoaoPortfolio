@@ -1,13 +1,15 @@
 import classNames from "classnames";
 import Image, { StaticImageData } from "next/image";
+import Link from "next/link"; // Certifique-se de importar o Link do Next.js
 
 type HeadlineProps = {
   type?: "fullScreen" | "standard";
   media?: "documentário" | "ensaio" | "esquete" | "institucional";
   title: string;
-  url: StaticImageData;
+  url: StaticImageData | string;
   alt: string;
   hoverEffectEnabled?: boolean;
+  link?: string; // propriedade link opcional
 };
 
 const headlineClassMap = {
@@ -27,6 +29,7 @@ const Headline = ({
   media = "documentário",
   title,
   hoverEffectEnabled = true,
+  link,
 }: HeadlineProps) => {
   const Containerclasses = classNames({
     [headlineClassMap[type]]: type,
@@ -46,6 +49,32 @@ const Headline = ({
   const hoverEffect = hoverEffectEnabled
     ? "group-hover:translate-y-[-50%] transition-transform duration-300"
     : "";
+
+  const SectionContent = () =>
+    link ? (
+      <Link
+        href={link}
+        className={`content text-right text-primary uppercase absolute bottom-4 right-2 pr-5 z-50 w-[80%] h-fit`}
+      >
+        <h2 className={`text-xxl w-full ${Titleclasses} ${TitleOpacityClass}`}>
+          {media}
+        </h2>
+        <h1 className={`w-full ${Titleclasses} ${TitleOpacityClass}`}>
+          {title}
+        </h1>
+      </Link>
+    ) : (
+      <section
+        className={`content text-right text-primary uppercase absolute bottom-4 right-2 pr-5 z-50 w-[80%] h-fit`}
+      >
+        <h2 className={`text-xxl w-full ${Titleclasses} ${TitleOpacityClass}`}>
+          {media}
+        </h2>
+        <h1 className={`w-full ${Titleclasses} ${TitleOpacityClass}`}>
+          {title}
+        </h1>
+      </section>
+    );
   return (
     <div className={`${Containerclasses} group`}>
       {/* Elemento de sobreposição para ativar o efeito de hover */}
@@ -60,21 +89,13 @@ const Headline = ({
       <Image
         src={url}
         alt={alt}
+        layout="fill"
         className={`object-cover w-full h-full ${
           hoverEffectEnabled ? hoverEffect : ""
         }`}
       />
-      <section
-        className={`content text-right text-primary uppercase absolute bottom-4 right-2 pr-5 z-20 w-[80%] h-fit`}
-      >
-        {/* O texto tem a classe de opacidade ajustada com base em hoverEffectEnabled */}
-        <h2 className={`text-xxl w-full ${Titleclasses} ${TitleOpacityClass}`}>
-          {media}
-        </h2>
-        <h1 className={`w-full ${Titleclasses} ${TitleOpacityClass}`}>
-          {title}
-        </h1>
-      </section>
+      {/* Se link estiver definido, envolva a seção com <Link>, senão, apenas retorne a seção */}
+      <SectionContent />
     </div>
   );
 };
