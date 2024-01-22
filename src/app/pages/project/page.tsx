@@ -5,6 +5,7 @@ import Headline from "@/app/components/headline/headline";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import fetchDataFromBin from "@/app/services/getProjects";
+import HeaderComponent from "@/app/components/header/header";
 
 interface ProjectData {
   header: string;
@@ -44,6 +45,7 @@ const ProjectPage = () => {
 
   return (
     <div className="flex gap-8 flex-col items-center">
+      <HeaderComponent />
       <Headline
         url={projectData.image}
         type="fullScreen"

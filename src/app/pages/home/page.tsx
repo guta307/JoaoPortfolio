@@ -12,6 +12,7 @@ import P8 from "../../assets/home/project8.jpg";
 import P9 from "../../assets/home/project9.jpg";
 import P10 from "../../assets/home/project10.jpg";
 import P11 from "../../assets/home/project11.png";
+import HeaderComponent from "@/app/components/header/header";
 
 const ids = [
   "65ad99b81f5677401f22a35e",
@@ -30,6 +31,7 @@ const ids = [
 const home = () => {
   return (
     <div>
+      <HeaderComponent />
       <div className="flex tablet:gap-[0.5%] desktop:flex-row overflow-hidden mobile:flex-col mobile:gap-0">
         <Headline
           url={P1}
