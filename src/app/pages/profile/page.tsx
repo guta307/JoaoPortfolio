@@ -5,16 +5,17 @@ import profileImg_Top from "../../assets/profile/portrait.png";
 import profileImg_Bottom from "../../assets/profile/portrait2.png";
 import Image from "next/image";
 import HeaderComponent from "@/app/components/header/header";
+import Footer from "@/app/components/footer/footer";
 
 const Profile = () => {
   return (
     <>
       <HeaderComponent />
-      <div className=" flex gap-8 pt-[4rem]  flex-col text-center justify-center items-center">
+      <div className=" flex gap-8 pt-[6rem]  flex-col text-center justify-center items-center">
         <Image
           src={profileImg_Top}
           alt={"imagem de perfil do rodapé"}
-          className=" w-[20%]"
+          className=" desktop:w-[20%] mobile:w-[45%]"
         />
         <h1 className="Header text-primary text-txl">João Pastoriza</h1>
         <article className="article flex flex-col gap-6 text-xxl text-primary w-[60%]">
@@ -100,6 +101,7 @@ const Profile = () => {
           />
         </article>
       </div>
+      <Footer />
     </>
   );
 };
