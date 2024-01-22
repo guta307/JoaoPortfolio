@@ -37,14 +37,18 @@
   font-family: "bessemer-bold", sans-serif;
 }
 
+.article {
+  font-family: "botanika-mono", sans-serif;
+}
+
 .title,
-.header {
+.Header {
   font-family: "coolvetica", sans-serif;
 }
 
 html,
 body {
-  min-height: 480px; /* Tamanho mínimo de altura */
+  overflow-x: hidden;
 }
 
 @layer base {
