@@ -3,27 +3,33 @@ import HeaderComponent from "@/app/components/header/header";
 const Contact = () => {
   return (
     <>
-      <HeaderComponent />
+      <HeaderComponent currentPage="contact" />
       <div className=" flex gap-8 pt-[6rem]  flex-col text-center justify-center items-center">
         <section className={"text-primary"}>
           <h1 className="Header font-bold desktop:text-tlg mobile:text-tmd">
             Endereço
           </h1>
-          <p className="article text-xxl">Vila Mariana, São Paulo</p>
+          <p className="article text-xxl mobile:text-lg">
+            Vila Mariana, São Paulo
+          </p>
         </section>
 
         <section className={"text-primary"}>
           <h1 className="Header font-bold desktop:text-tlg mobile:text-tmd">
             E-mail
           </h1>
-          <p className="article text-xxl">joaovpastoriza@gmail.com</p>
+          <p className="article desktop:text-xxl mobile:text-lg">
+            joaovpastoriza@gmail.com
+          </p>
         </section>
 
         <section className={"text-primary"}>
           <h1 className="Header font-bold desktop:text-tlg mobile:text-tmd">
             Telefone
           </h1>
-          <p className="article text-xxl">(15) 99813-8404</p>
+          <p className="article text-xxl desktop:text-xxl mobile:text-lg">
+            (15) 99813-8404
+          </p>
         </section>
       </div>
     </>
