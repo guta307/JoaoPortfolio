@@ -54,18 +54,20 @@ const Headline = ({
     link ? (
       <Link
         href={link}
-        className={`content text-right text-primary uppercase absolute bottom-4 right-2 pr-5 z-50 w-[80%] h-fit`}
+        className={`content text-right text-primary uppercase absolute bottom-4 right-2 pr-5 z-30 w-[80%] h-fit`}
       >
-        <h2 className={`text-xxl w-full ${Titleclasses} ${TitleOpacityClass}`}>
+        <h2 className={`text-tmd w-full ${Titleclasses} ${TitleOpacityClass}`}>
           {media}
         </h2>
-        <h1 className={`w-full ${Titleclasses} ${TitleOpacityClass}`}>
+        <h1
+          className={`desktop:text-tmd tablet:text-tmd mobile:text-tmd w-full ${Titleclasses} ${TitleOpacityClass}`}
+        >
           {title}
         </h1>
       </Link>
     ) : (
       <section
-        className={`content text-right text-primary uppercase absolute bottom-4 right-2 pr-5 z-50 w-[80%] h-fit`}
+        className={`content text-right text-primary uppercase absolute bottom-4 right-2 pr-5 z-30 w-[80%] h-fit`}
       >
         <h2 className={`text-xxl w-full ${Titleclasses} ${TitleOpacityClass}`}>
           {media}
@@ -78,7 +80,7 @@ const Headline = ({
   return (
     <div className={`${Containerclasses} group`}>
       {/* Elemento de sobreposição para ativar o efeito de hover */}
-      <div className="absolute inset-0 z-30"></div>
+      <div className="absolute inset-0 z-20"></div>
 
       {/* Máscara para escurecer a imagem */}
       <div
