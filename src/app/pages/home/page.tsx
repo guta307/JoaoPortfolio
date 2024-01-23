@@ -1,12 +1,12 @@
 import Headline from "@/app/components/headline/headline";
 
 // Importações de imagens
-import P1 from "../../assets/home/project1.png";
-import P2 from "../../assets/home/project2.png";
-import P3 from "../../assets/home/project3.png";
-import P4 from "../../assets/home/project4.png";
+import P1 from "../../assets/home/project1.jpg";
+import P2 from "../../assets/home/project2.jpg";
+import P3 from "../../assets/home/project3.jpg";
+import P4 from "../../assets/home/project4.jpg";
 import P5 from "../../assets/home/project5.jpg";
-import P6 from "../../assets/home/project6.jpg";
+import P6 from "../../assets/home/project6.jpeg";
 import P7 from "../../assets/home/project7.png";
 import P8 from "../../assets/home/project8.jpg";
 import P9 from "../../assets/home/project9.jpg";
