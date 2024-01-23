@@ -1,8 +1,12 @@
-import classNames from "classnames";
 import Image, { StaticImageData } from "next/image";
 import Link from "next/link"; // Certifique-se de importar o Link do Next.js
+import {
+  getContainerClasses,
+  getTitleClasses,
+  getHoverEffectClass,
+} from "./style";
 
-type HeadlineProps = {
+export type HeadlineProps = {
   type?: "fullScreen" | "standard";
   media?: "documentário" | "ensaio" | "esquete" | "institucional";
   title: string;
@@ -10,16 +14,6 @@ type HeadlineProps = {
   alt: string;
   hoverEffectEnabled?: boolean;
   link?: string; // propriedade link opcional
-};
-
-const headlineClassMap = {
-  fullScreen: "w-screen h-screen",
-  standard: " h-screen w-[33%] mobile:w-screen",
-};
-
-const titleClassMap = {
-  fullScreen: "tablet:text-txl desktop:text-txl mobile:text-lg",
-  standard: "tablet:text-txl desktop:text-tmd mobile:text-lg",
 };
 
 const Headline = ({
@@ -31,36 +25,18 @@ const Headline = ({
   hoverEffectEnabled = true,
   link,
 }: HeadlineProps) => {
-  const Containerclasses = classNames({
-    [headlineClassMap[type]]: type,
-    "relative flex items-center justify-center overflow-hidden": true, // classes do contêiner
-  });
-
-  const Titleclasses = classNames({
-    [titleClassMap[type]]: type,
-    "opacity-0 group-hover:opacity-100 transition-opacity duration-300": true, // Efeito de transição de opacidade
-  });
-
-  const TitleOpacityClass = hoverEffectEnabled
-    ? "opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-    : "opacity-100";
-
-  // Adiciona o efeito de hover ao contêiner principal
-  const hoverEffect = hoverEffectEnabled
-    ? "group-hover:translate-y-[-50%] transition-transform duration-300"
-    : "";
-
+  const Containerclasses = getContainerClasses(type);
+  const Titleclasses = getTitleClasses(type, hoverEffectEnabled);
+  const hoverEffect = getHoverEffectClass(hoverEffectEnabled);
   const SectionContent = () =>
     link ? (
       <Link
         href={link}
         className={`content text-right text-primary uppercase absolute bottom-4 right-2 pr-5 z-30 w-[80%] h-fit`}
       >
-        <h2 className={`text-tmd w-full ${Titleclasses} ${TitleOpacityClass}`}>
-          {media}
-        </h2>
+        <h2 className={`text-tmd w-full ${Titleclasses}`}>{media}</h2>
         <h1
-          className={`desktop:text-tmd tablet:text-tmd mobile:text-tmd w-full ${Titleclasses} ${TitleOpacityClass}`}
+          className={`desktop:text-tmd tablet:text-tmd mobile:text-tmd w-full ${Titleclasses}`}
         >
           {title}
         </h1>
@@ -69,12 +45,8 @@ const Headline = ({
       <section
         className={`content text-right text-primary uppercase absolute bottom-4 right-2 pr-5 z-30 w-[80%] h-fit`}
       >
-        <h2 className={`text-xxl w-full ${Titleclasses} ${TitleOpacityClass}`}>
-          {media}
-        </h2>
-        <h1 className={`w-full ${Titleclasses} ${TitleOpacityClass}`}>
-          {title}
-        </h1>
+        <h2 className={`text-xxl w-full ${Titleclasses}`}>{media}</h2>
+        <h1 className={`w-full ${Titleclasses}`}>{title}</h1>
       </section>
     );
   return (
