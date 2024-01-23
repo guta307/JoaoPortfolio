@@ -10,7 +10,7 @@ import Footer from "@/app/components/footer/footer";
 const Profile = () => {
   return (
     <>
-      <HeaderComponent />
+      <HeaderComponent currentPage="profile" />
       <div className=" flex gap-8 pt-[6rem]  flex-col text-center justify-center items-center">
         <Image
           src={profileImg_Top}
@@ -86,11 +86,17 @@ const Profile = () => {
             contando as histórias por meio de uma câmera e uma tela.
           </p>
 
-          <Link className="article underline text-tmd" href={"/pages/home"}>
+          <Link
+            className="article underline desktop:text-tmd tablet:text-tmd mobile:text-xxl"
+            href={"/pages/home"}
+          >
             Baixe meu currículo
           </Link>
 
-          <Link className="article underline text-tmd" href={"/pages/contact"}>
+          <Link
+            className="article underline desktop:text-tmd tablet:text-tmd mobile:text-xxl"
+            href={"/pages/contact"}
+          >
             Contato
           </Link>
 

@@ -32,7 +32,7 @@ const ids = [
 const home = () => {
   return (
     <div>
-      <HeaderComponent />
+      <HeaderComponent currentPage="home" />
       <div className="flex tablet:gap-[0.5%] desktop:flex-row overflow-hidden mobile:flex-col mobile:gap-0">
         <Headline
           url={P1}
