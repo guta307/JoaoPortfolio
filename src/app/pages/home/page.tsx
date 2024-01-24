@@ -16,17 +16,17 @@ import HeaderComponent from "@/app/components/header/header";
 import Footer from "@/app/components/footer/footer";
 
 const ids = [
-  "65ad99b81f5677401f22a35e",
-  "65ad9d4f266cfc3fde7d922d",
-  "65ad9e621f5677401f22a4c6",
-  "65ad9fdc266cfc3fde7d9300",
-  "65ada040dc74654018981519",
-  "65ada0af1f5677401f22a583",
-  "65ada1091f5677401f22a5a6",
-  "65ad8b1e1f5677401f229eb8",
-  "65ada1a4266cfc3fde7d937d",
-  "65ada20a1f5677401f22a5fc",
-  "65ada2db1f5677401f22a629",
+  "65b0f8f1dc7465401899bf72",
+  "65b0f8d21f5677401f244f42",
+  "65b0f8b2266cfc3fde7f3e19",
+  "65b0f89bdc7465401899bf4f",
+  "65b0f86cdc7465401899bf3e",
+  "65b0f8311f5677401f244f07",
+  "65b0f80cdc7465401899bf0b",
+  "65b0f909dc7465401899bf7e",
+  "65b0f7dddc7465401899bef0",
+  "65b0f78e1f5677401f244ed7",
+  "65b0f7c1266cfc3fde7f3db3",
 ];
 
 const home = () => {
@@ -35,6 +35,7 @@ const home = () => {
       <HeaderComponent currentPage="home" />
       <div className="flex tablet:gap-[0.5%] desktop:flex-row overflow-hidden mobile:flex-col mobile:gap-0">
         <Headline
+          className={"object-top"}
           url={P1}
           alt={"Documentário: A Arte por trás do mundo áspero"}
           media="documentário"
@@ -42,6 +43,7 @@ const home = () => {
           link={`/pages/project/?id=${ids[0]}`}
         />
         <Headline
+          className={"object-top"}
           url={P2}
           alt={"Documentário: Em terra de palmeiras: de 1914 a 1999"}
           media="documentário"
@@ -49,6 +51,7 @@ const home = () => {
           link={`/pages/project/?id=${ids[1]}`}
         />
         <Headline
+          className={"object-top"}
           url={P3}
           alt={"Documentário: MOCHAKK: HOUSE TO THE WORLD"}
           media="documentário"
@@ -59,6 +62,7 @@ const home = () => {
 
       <div className="flex overflow-hidden">
         <Headline
+          className={"object-top"}
           url={P4}
           type="fullScreen"
           alt={"Documentário: O Sal da vida"}
@@ -70,6 +74,7 @@ const home = () => {
 
       <div className="flex tablet:gap-[0.5%] desktop:flex-row overflow-hidden mobile:flex-col mobile:gap-0">
         <Headline
+          className={"object-top"}
           url={P5}
           alt={"Ensaio: Akira e o retrato de uma geração"}
           media="ensaio"
@@ -84,6 +89,7 @@ const home = () => {
           link={`/pages/project/?id=${ids[5]}`}
         />
         <Headline
+          className={"object-top"}
           url={P7}
           alt={"Ensaio: Tintin e a atemporalidade"}
           media="ensaio"
@@ -94,6 +100,7 @@ const home = () => {
 
       <div className="flex overflow-hidden">
         <Headline
+          className={"object-top"}
           url={P8}
           type="fullScreen"
           alt={"Ensaio: A vida e arte de Hayao Miazaki"}
@@ -105,6 +112,7 @@ const home = () => {
 
       <div className="flex tablet:gap-[0.5%] desktop:flex-row overflow-hidden mobile:flex-col mobile:gap-0">
         <Headline
+          className={"object-top"}
           url={P9}
           alt={"Esquete: especial de hallowen"}
           media="esquete"
@@ -112,6 +120,7 @@ const home = () => {
           link={`/pages/project/?id=${ids[8]}`}
         />
         <Headline
+          className={"object-top"}
           url={P10}
           alt={"Institucional: A volta da maratona"}
           media="institucional"
@@ -119,6 +128,7 @@ const home = () => {
           link={`/pages/project/?id=${ids[9]}`}
         />
         <Headline
+          className={"object-top"}
           url={P11}
           alt={"Esquete: the beartouille"}
           media="esquete"
