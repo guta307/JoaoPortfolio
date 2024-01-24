@@ -1,80 +1,11 @@
-"use client";
-
-import React, { useState, useEffect } from "react";
-import Headline from "@/app/components/headline/headline";
-import Link from "next/link";
-import { useSearchParams } from "next/navigation";
-import fetchDataFromBin from "@/app/services/getProjects";
-import HeaderComponent from "@/app/components/header/header";
-import LoadingComponent from "@/app/components/loadingComponent/loadingComponent";
-
-interface ProjectData {
-  header: string;
-  image: string;
-  media: "documentário" | "ensaio" | "esquete" | "institucional";
-  title: string;
-  article: {
-    paragraphs: string[];
-  };
-  link: {
-    text: string;
-    href: string;
-  };
-}
+import ProjectDetails from "@/app/components/projectDetails/projectDetails";
+import { Suspense } from "react";
 
 const ProjectPage = () => {
-  const [projectData, setProjectData] = useState<ProjectData | null>(null);
-  const searchParams = useSearchParams();
-  const id = searchParams.get("id");
-
-  useEffect(() => {
-    if (typeof id === "string") {
-      getData(id);
-    }
-  }, [id]);
-
-  const getData = async (id: string) => {
-    const response = await fetchDataFromBin(id);
-    setProjectData(response.record);
-  };
-
-  const formatHeader = (header: string) => {
-    return header.replace(/\n/g, "<br />");
-  };
-
-  if (!projectData) return <LoadingComponent />;
-
   return (
-    <div className="flex gap-8 flex-col items-center">
-      <HeaderComponent />
-      <Headline
-        className={"object-top pt-12"}
-        url={projectData.image}
-        type="fullScreen"
-        alt={`${projectData.media}: ${projectData.title}`}
-        media={projectData.media}
-        hoverEffectEnabled={false}
-        title={projectData.title}
-      />
-
-      <h1
-        className="Header mobile:text-tmd desktop:text-tlg text-primary text-center"
-        dangerouslySetInnerHTML={{ __html: formatHeader(projectData.header) }}
-      />
-
-      <article className="article flex flex-col gap-8 text-primary text-center text-xxl p-6 w-[90%]">
-        {projectData.article.paragraphs.map((paragraph, index) => (
-          <p key={index}>{paragraph}</p>
-        ))}
-
-        <Link
-          className="article underline text-tmd"
-          href={projectData.link.href}
-        >
-          {projectData.link.text}
-        </Link>
-      </article>
-    </div>
+    <Suspense>
+      <ProjectDetails />
+    </Suspense>
   );
 };
 
