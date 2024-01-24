@@ -8,7 +8,7 @@ async function fetchDataFromBin(binId: string): Promise<any> {
   try {
     const response = await axios.get(`https://api.jsonbin.io/v3/b/${binId}`, {
       headers: {
-        "X-Master-Key": API_KEY,
+        "X-Access-Key": API_KEY,
         "Access-Control-Allow-Origin": "*",
       },
     });
