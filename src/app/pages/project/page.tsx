@@ -6,6 +6,7 @@ import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import fetchDataFromBin from "@/app/services/getProjects";
 import HeaderComponent from "@/app/components/header/header";
+import LoadingComponent from "@/app/components/loadingComponent/loadingComponent";
 
 interface ProjectData {
   header: string;
@@ -41,12 +42,13 @@ const ProjectPage = () => {
     return header.replace(/\n/g, "<br />");
   };
 
-  if (!projectData) return <div>Carregando...</div>;
+  if (!projectData) return <LoadingComponent />;
 
   return (
     <div className="flex gap-8 flex-col items-center">
       <HeaderComponent />
       <Headline
+        className={"object-top pt-12"}
         url={projectData.image}
         type="fullScreen"
         alt={`${projectData.media}: ${projectData.title}`}
