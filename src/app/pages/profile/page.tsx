@@ -30,13 +30,13 @@ const Profile = () => {
             minha paixão pela sétima arte começou muito antes de entrar na
             faculdade. Quando tinha por volta dos 7 ou 8 anos de idade, decidi
             que queria assistir um filme de terror no cinema, e meu tio que
-            também sempre adorou ir a sessões um tanto quanto "questionáveis",
-            me levou para assistir Atividade Paranormal. Assim como Spielberg,
-            fiquei com medo daquilo que tinha visto, e passei uma noite sem
-            dormir, e em uma tentativa de me acalmar, esse mesmo tio decidiu me
-            mostrar alguns Making Ofs de filmes de terror que colecionava, e a
-            partir daquele momento me apaixonei pela ideia de criar filmes e
-            histórias.
+            também sempre adorou ir a sessões um tanto quanto
+            &quot;questionáveis&quot;, me levou para assistir Atividade
+            Paranormal. Assim como Spielberg, fiquei com medo daquilo que tinha
+            visto, e passei uma noite sem dormir, e em uma tentativa de me
+            acalmar, esse mesmo tio decidiu me mostrar alguns Making Ofs de
+            filmes de terror que colecionava, e a partir daquele momento me
+            apaixonei pela ideia de criar filmes e histórias.
           </p>
 
           <p>
@@ -66,12 +66,12 @@ const Profile = () => {
           <p>
             Devo confessar que sou um palmeirense incorrigivel, e realizei um
             grande sonho de trabalhar com o time que amo no desenvolvimento da
-            série "Uma Terra de Palmeiras", onde fui responsável pela produção
-            executiva de todo o projeto, assim como em outros documentários onde
-            pude unir sonhos com a realidade como em "Rauh Welt Begriff, A arte
-            atrás do Mundo Áspero" onde tive a oportunidade de desenvolver um
-            projeto para ser gravado no Japão com Akira Nakai e a equipe RWB, de
-            quem sou grande admirador.
+            série &quot;Uma Terra de Palmeiras&quot;, onde fui responsável pela
+            produção executiva de todo o projeto, assim como em outros
+            documentários onde pude unir sonhos com a realidade como em
+            &quot;Rauh Welt Begriff, A arte atrás do Mundo Áspero&quot; onde
+            tive a oportunidade de desenvolver um projeto para ser gravado no
+            Japão com Akira Nakai e a equipe RWB, de quem sou grande admirador.
           </p>
 
           <p>
