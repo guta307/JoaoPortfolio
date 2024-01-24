@@ -28,11 +28,11 @@ export const getTitleClasses = (
   });
 
   return hoverEffectEnabled
-    ? `${baseClass} opacity-0 group-hover:opacity-100`
+    ? `${baseClass} group-hover:opacity-100`
     : `${baseClass} opacity-100`;
 };
 
 export const getHoverEffectClass = (hoverEffectEnabled: boolean) =>
   hoverEffectEnabled
-    ? "group-hover:translate-y-[-50%] transition-transform duration-300"
+    ? "group-hover:scale-110 transition-transform duration-300"
     : "";
