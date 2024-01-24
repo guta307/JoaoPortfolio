@@ -30,24 +30,27 @@ const Headline = ({
   const Containerclasses = getContainerClasses(type);
   const Titleclasses = getTitleClasses(type, hoverEffectEnabled);
   const hoverEffect = getHoverEffectClass(hoverEffectEnabled);
-  const SectionContent = () =>
-    link ? (
-      <Link
-        href={link}
-        className={`content text-right text-primary uppercase absolute bottom-4 right-2 pr-5 z-30 w-[80%] h-fit`}
-      >
-        <h2
-          className={`desktop:text-tmd tablet:text-tmd mobile:text-tmd w-full ${Titleclasses}`}
-        >
-          {media}
-        </h2>
-        <h1
-          className={`desktop:text-tmd tablet:text-tmd mobile:text-tmd w-full ${Titleclasses}`}
-        >
-          {title}
-        </h1>
-      </Link>
-    ) : (
+
+  // Conteúdo interno do componente Headline
+  const content = (
+    <>
+      {/* Elemento de sobreposição para ativar o efeito de hover */}
+      <div className="absolute inset-0 z-20"></div>
+
+      {/* Máscara para escurecer a imagem */}
+      <div className="absolute w-full h-full bg-black opacity-40 z-10"></div>
+
+      {/* Imagem de fundo */}
+      <Image
+        src={url}
+        alt={alt}
+        layout="fill"
+        className={`object-cover w-full h-full ${
+          hoverEffectEnabled ? hoverEffect : ""
+        } ${className}`}
+      />
+
+      {/* Conteúdo textual */}
       <section
         className={`content text-right text-primary uppercase absolute bottom-4 right-2 pr-5 z-30 w-[80%] h-fit`}
       >
@@ -62,29 +65,16 @@ const Headline = ({
           {title}
         </h1>
       </section>
-    );
-  return (
-    <div className={`${Containerclasses} group`}>
-      {/* Elemento de sobreposição para ativar o efeito de hover */}
-      <div className="absolute inset-0 z-20"></div>
+    </>
+  );
 
-      {/* Máscara para escurecer a imagem */}
-      <div
-        className="absolute w-full h-full bg-black
-       opacity-40 z-10"
-      ></div>
-
-      <Image
-        src={url}
-        alt={alt}
-        layout="fill"
-        className={`object-cover w-full h-full ${
-          hoverEffectEnabled ? hoverEffect : ""
-        } ${className}`}
-      />
-      {/* Se link estiver definido, envolva a seção com <Link>, senão, apenas retorne a seção */}
-      <SectionContent />
-    </div>
+  // Renderiza o conteúdo dentro de um Link se link for fornecido, caso contrário, mantém dentro de uma div
+  return link ? (
+    <Link className={`${Containerclasses} group`} href={link} passHref>
+      {content}
+    </Link>
+  ) : (
+    <div className={`${Containerclasses} group`}>{content}</div>
   );
 };
 
