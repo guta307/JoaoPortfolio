@@ -88,7 +88,9 @@ const Profile = () => {
 
           <Link
             className="article underline desktop:text-tmd tablet:text-tmd mobile:text-xxl"
-            href={"/pages/home"}
+            href={
+              "https://drive.google.com/drive/u/0/folders/13scMuQiJ-0XXkhKukhda0KWObnF6Lo_8"
+            }
           >
             Baixe meu currículo
           </Link>
