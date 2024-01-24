@@ -8,7 +8,7 @@ type headerProps = {
 
 const HeaderComponent = ({ currentPage }: headerProps) => {
   return (
-    <nav className=" my-0 mx-auto flex z-50 bg-black justify-between items-center fixed w-full min-w-[300px] pt-4 pb-4">
+    <nav className="flex z-50 bg-black justify-between items-center fixed w-screen min-w-[300px] pt-4 pb-4">
       <Image
         src={Logo}
         alt="imagem de logo de João Pastoriza"
