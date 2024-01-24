@@ -13,6 +13,7 @@ export type HeadlineProps = {
   url: StaticImageData | string;
   alt: string;
   hoverEffectEnabled?: boolean;
+  className?: string;
   link?: string; // propriedade link opcional
 };
 
@@ -24,6 +25,7 @@ const Headline = ({
   title,
   hoverEffectEnabled = true,
   link,
+  className = "",
 }: HeadlineProps) => {
   const Containerclasses = getContainerClasses(type);
   const Titleclasses = getTitleClasses(type, hoverEffectEnabled);
@@ -34,7 +36,11 @@ const Headline = ({
         href={link}
         className={`content text-right text-primary uppercase absolute bottom-4 right-2 pr-5 z-30 w-[80%] h-fit`}
       >
-        <h2 className={`text-tmd w-full ${Titleclasses}`}>{media}</h2>
+        <h2
+          className={`desktop:text-tmd tablet:text-tmd mobile:text-tmd w-full ${Titleclasses}`}
+        >
+          {media}
+        </h2>
         <h1
           className={`desktop:text-tmd tablet:text-tmd mobile:text-tmd w-full ${Titleclasses}`}
         >
@@ -45,8 +51,16 @@ const Headline = ({
       <section
         className={`content text-right text-primary uppercase absolute bottom-4 right-2 pr-5 z-30 w-[80%] h-fit`}
       >
-        <h2 className={`text-xxl w-full ${Titleclasses}`}>{media}</h2>
-        <h1 className={`w-full ${Titleclasses}`}>{title}</h1>
+        <h2
+          className={`desktop:text-tmd tablet:text-tmd mobile:text-tmd w-full ${Titleclasses}`}
+        >
+          {media}
+        </h2>
+        <h1
+          className={`desktop:text-tmd tablet:text-tmd mobile:text-tmd w-full ${Titleclasses}`}
+        >
+          {title}
+        </h1>
       </section>
     );
   return (
@@ -66,7 +80,7 @@ const Headline = ({
         layout="fill"
         className={`object-cover w-full h-full ${
           hoverEffectEnabled ? hoverEffect : ""
-        }`}
+        } ${className}`}
       />
       {/* Se link estiver definido, envolva a seção com <Link>, senão, apenas retorne a seção */}
       <SectionContent />
