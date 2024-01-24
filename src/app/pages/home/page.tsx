@@ -128,7 +128,7 @@ const home = () => {
           link={`/pages/project/?id=${ids[9]}`}
         />
         <Headline
-          className={"object-top"}
+          className={" object-center"}
           url={P11}
           alt={"Esquete: the beartouille"}
           media="esquete"
