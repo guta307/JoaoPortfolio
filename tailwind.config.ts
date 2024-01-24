@@ -26,6 +26,9 @@ module.exports = {
       textColor: {
         primary: toRgba("--primary"),
       },
+      backgroundColor: {
+        primary: toRgba("--primary"),
+      },
       screens: {
         mobile: "0px", // Valor para mobile
         tablet: "700px", // Valor para tablet
