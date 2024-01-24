@@ -4,9 +4,15 @@ import IgIcon from "../../assets/footer/ig.png";
 import LinkedinIcon from "../../assets/footer/linkedin.png";
 import Image from "next/image";
 
-const Footer = () => {
+type FooterProps = {
+  className?: string;
+};
+
+const Footer = ({ className = "" }: FooterProps) => {
   return (
-    <footer className=" flex justify-end items-center w-full pt-8 pb-8">
+    <footer
+      className={`flex justify-end items-center w-full pt-8 pb-8 ${className}`}
+    >
       <ul className="flex gap-4 footer text-xl text-primary pr-8">
         <li>
           <Link
