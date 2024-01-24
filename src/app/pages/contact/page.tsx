@@ -1,10 +1,11 @@
+import Footer from "@/app/components/footer/footer";
 import HeaderComponent from "@/app/components/header/header";
 
 const Contact = () => {
   return (
-    <>
+    <div className="h-screen flex flex-col justify-between">
       <HeaderComponent currentPage="contact" />
-      <div className=" flex gap-8 pt-[6rem]  flex-col text-center justify-center items-center">
+      <div className="  flex gap-8 pt-[6rem]  flex-col text-center  items-center">
         <section className={"text-primary"}>
           <h1 className="Header font-bold desktop:text-tlg mobile:text-tmd">
             Endereço
@@ -32,7 +33,9 @@ const Contact = () => {
           </p>
         </section>
       </div>
-    </>
+
+      <Footer />
+    </div>
   );
 };
 
