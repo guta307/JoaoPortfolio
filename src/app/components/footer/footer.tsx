@@ -11,7 +11,7 @@ type FooterProps = {
 const Footer = ({ className = "" }: FooterProps) => {
   return (
     <footer
-      className={`flex justify-end items-center w-full pt-8 pb-8 ${className}`}
+      className={`flex bg-black justify-end items-center w-full pt-8 pb-8 ${className}`}
     >
       <ul className="flex gap-4 footer text-xl text-primary pr-8">
         <li>
@@ -22,7 +22,7 @@ const Footer = ({ className = "" }: FooterProps) => {
             <Image
               src={IgIcon}
               alt={"Imagem do instagram para redirecionar a página oficial"}
-              className=" desktop:w-[5vw]  tablet:w-[5vw] mobile:w-[10vw]"
+              className=" desktop:w-[3vw]  tablet:w-[3vw] mobile:w-[10vw]"
             />
           </Link>
         </li>
@@ -34,7 +34,7 @@ const Footer = ({ className = "" }: FooterProps) => {
             <Image
               src={LinkedinIcon}
               alt={"Imagem do linkedin para redirecionar a página oficial"}
-              className=" desktop:w-[5vw] tablet:w-[5vw] mobile:w-[10vw]"
+              className=" desktop:w-[3vw] tablet:w-[3vw] mobile:w-[10vw]"
             />
           </Link>
         </li>
