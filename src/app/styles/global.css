@@ -46,11 +46,20 @@
   font-family: "coolvetica", sans-serif;
 }
 
+.logo {
+  font-family: "planetkosmos", sans-serif;
+}
+
 html,
 body {
   overflow-x: hidden;
 }
 
+@media (min-width: 1090px) {
+  .logo {
+    word-spacing: -15px;
+  }
+}
 @layer base {
   :root {
     /* Screens */
