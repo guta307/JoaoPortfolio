@@ -11,7 +11,7 @@ type FooterProps = {
 const Footer = ({ className = "" }: FooterProps) => {
   return (
     <footer
-      className={`flex bg-black justify-end items-center w-full pt-8 pb-8 ${className}`}
+      className={`flex bg-black justify-center items-center w-full pt-8 pb-8 ${className}`}
     >
       <ul className="flex gap-4 footer text-xl text-primary pr-8">
         <li>
