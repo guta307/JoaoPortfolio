@@ -69,7 +69,7 @@ const ProjectDetails = () => {
           {projectData.link.map((value: LinkItem, index: number) => {
             return (
               <Link
-                id={index.toString()}
+                key={index.toString()}
                 className="article underline text-tmd"
                 href={value.href}
               >
