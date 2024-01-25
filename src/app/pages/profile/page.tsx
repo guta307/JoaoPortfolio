@@ -11,7 +11,7 @@ const Profile = () => {
   return (
     <>
       <HeaderComponent currentPage="profile" />
-      <div className=" flex gap-8 pt-[6rem]  flex-col text-center justify-center items-center">
+      <div className="  flex gap-8 desktop:pt-[90px] mobile:pt-[60px] flex-col text-center justify-center items-center">
         <Image
           src={profileImg_Top}
           alt={"imagem de perfil do rodapé"}

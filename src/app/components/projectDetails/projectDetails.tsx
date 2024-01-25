@@ -19,9 +19,13 @@ interface ProjectData {
   link: {
     text: string;
     href: string;
-  };
+  }[];
 }
 
+interface LinkItem {
+  text: string;
+  href: string;
+}
 const formatHeader = (header: string) => {
   return header.replace(/\n/g, "<br />");
 };
@@ -43,9 +47,9 @@ const ProjectDetails = () => {
   return (
     <>
       <HeaderComponent />
-      <div className="flex gap-8 pt-8 flex-col items-center">
+      <div className="flex gap-8 desktop:pt-[80px] mobile:pt-[50px] flex-col items-center">
         <Headline
-          className={"object-top pt-12"}
+          className={"object-top"}
           url={projectData.image}
           type="fullScreen"
           alt={`${projectData.media}: ${projectData.title}`}
@@ -62,12 +66,17 @@ const ProjectDetails = () => {
             <p key={index}>{paragraph}</p>
           ))}
 
-          <Link
-            className="article underline text-tmd"
-            href={projectData.link.href}
-          >
-            {projectData.link.text}
-          </Link>
+          {projectData.link.map((value: LinkItem, index: number) => {
+            return (
+              <Link
+                id={index.toString()}
+                className="article underline text-tmd"
+                href={value.href}
+              >
+                {value.text}
+              </Link>
+            );
+          })}
         </article>
       </div>
     </>

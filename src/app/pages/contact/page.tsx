@@ -5,9 +5,10 @@ const Contact = () => {
   return (
     <>
       <HeaderComponent currentPage="contact" />
-      <div className=" h-[90%] flex flex-col justify-between">
-        <div className="  flex gap-8 pt-[6rem] flex-col text-center  items-center">
-          <section className={"text-primary"}>
+      {/* Faz o contêiner principal ocupar no mínimo a altura total da tela */}
+      <div className="flex desktop:pt-[80px] mobile:pt-[50px] tablet:pt-[50px] flex-col justify-between min-h-screen">
+        <div className="flex-grow flex flex-col justify-center items-center text-center">
+          <section className="text-primary">
             <h1 className="Header font-bold desktop:text-tlg mobile:text-tmd">
               Endereço
             </h1>
@@ -16,7 +17,7 @@ const Contact = () => {
             </p>
           </section>
 
-          <section className={"text-primary"}>
+          <section className="text-primary">
             <h1 className="Header font-bold desktop:text-tlg mobile:text-tmd">
               E-mail
             </h1>
@@ -25,7 +26,7 @@ const Contact = () => {
             </p>
           </section>
 
-          <section className={"text-primary"}>
+          <section className="text-primary">
             <h1 className="Header font-bold desktop:text-tlg mobile:text-tmd">
               Telefone
             </h1>
@@ -35,6 +36,7 @@ const Contact = () => {
           </section>
         </div>
 
+        {/* Footer vai automaticamente para a parte inferior da tela */}
         <Footer />
       </div>
     </>
