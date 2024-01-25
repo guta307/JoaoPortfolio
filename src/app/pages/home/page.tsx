@@ -105,7 +105,7 @@ const home = () => {
           type="fullScreen"
           alt={"Ensaio: A vida e arte de Hayao Miazaki"}
           media="ensaio"
-          title="A vida e arte de Hayao Miazaki"
+          title="A vida e arte de Hayao Miyazaki"
           link={`/pages/project/?id=${ids[7]}`}
         />
       </div>
