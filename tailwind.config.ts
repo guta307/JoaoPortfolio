@@ -33,7 +33,6 @@ module.exports = {
         mobile: "0px", // Valor para mobile
         tablet: "700px", // Valor para tablet
         desktop: "1090px", // Valor para desktop
-        tv: "1440px", // Valor para tv
       },
     },
   },
